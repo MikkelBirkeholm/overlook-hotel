@@ -13,8 +13,6 @@ export default async function Page({ params }) {
   const hotelId = await setHotelIdFromSlug(hotel)
   const hotelData = await getHotelData(hotelId)
 
-  console.log(land.charAt(0).toUpperCase() + land.slice(1))
-
   const bookingData = {
     hotel_id: hotelId,
     hotel_name: hotelData.item.title,

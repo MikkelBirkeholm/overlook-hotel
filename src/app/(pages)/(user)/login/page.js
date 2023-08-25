@@ -47,7 +47,7 @@ export default function Login() {
             name="password"
             defaultValue={user_password}
           />
-          <button onClick={handleSignIn}>Sign in</button>
+          <button onClick={handleSignIn}>Log in</button>
         </form>
       </section>
     </main>

@@ -25,6 +25,12 @@ export default async function Dashboard() {
       <section>
         <h1>Reservationer</h1>
         <p>Her kan du se dine reservationer</p>
+        <form
+          action="/auth/login"
+          method="post"
+        >
+          <button formAction="/auth/logout">Log ud</button>
+        </form>
         {bookings && <UserDashboard bookings={bookings} />}
       </section>
     </main>

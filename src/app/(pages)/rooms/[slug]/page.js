@@ -21,10 +21,7 @@ export default async function Page({ params }) {
   console.log(room)
   return (
     <main>
-      <TitleBanner
-        heading={room[0].title}
-        src={room[0].image_id}
-      />
+      <section>Rooms</section>
     </main>
   )
 }

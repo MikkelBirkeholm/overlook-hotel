@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './header.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import { LoginSwitcher } from './LoginSwitcher'
 
 export const Header = () => {
   return (
@@ -29,9 +30,7 @@ export const Header = () => {
             <li>
               <Link href={'/reservation'}>RESERVATION</Link>
             </li>
-            <li>
-              <Link href={'/login'}>LOGIN</Link>
-            </li>
+            <LoginSwitcher />
           </ul>
         </nav>
       </div>
