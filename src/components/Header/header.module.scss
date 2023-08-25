@@ -1,0 +1,28 @@
+.header {
+  min-height: 5rem;
+  background-color: $clr-black;
+  @include flex(row, space-between, center, 0rem);
+  padding: 1rem 0;
+  color: $clr-white;
+  img {
+    object-fit: contain;
+  }
+  > div {
+    position: relative;
+    @include flex(row, space-between, flex-end, 1rem);
+  }
+  ul {
+    @include flex(row, flex-end, center, 1rem);
+    li:not(:last-child) {
+      position: relative;
+      &::after {
+        content: '|';
+        position: absolute;
+        right: -0.75rem;
+        top: 0;
+        padding: 0;
+        width: fit-content;
+      }
+    }
+  }
+}

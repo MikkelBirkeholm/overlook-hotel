@@ -1,0 +1,42 @@
+// farver
+$clr-red: #ff0000;
+$clr-red-transparent: rgba(255, 0, 0, 0.7);
+$clr-red-dark: #c40000;
+$clr-black: #000000;
+$clr-black-transparent: rgba(0, 0, 0, 0.8);
+$clr-white: #ffffff;
+$clr-gray: #ebebeb;
+$clr-gray-mid: #b0b0b0;
+$clr-gray-dark: #707070;
+$clr-gray-text: #333333;
+$clr-green: #0ba516;
+
+//details
+$box-shadow: 0 3px 8px rgba(16, 15, 15, 0.3);
+$border-radius: 6px;
+
+//mixins
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 1rem) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin innerwidth {
+  width: clamp(2ch, 1200px, 95vw);
+  margin: 0 auto;
+}
+
+@mixin responsiveGrid($minwidth: 200px, $gap: 1rem, $fit: auto-fit) {
+  display: grid;
+  grid-template-columns: repeat($fit, minmax($minwidth, 1fr));
+  gap: $gap;
+}
+
+@mixin mobile {
+  @media (width < 600px) {
+    @content;
+  }
+}

@@ -1,0 +1,17 @@
+.footer {
+  background-color: $clr-white;
+  min-height: 5rem;
+  @include flex(row, space-between, center, 0rem);
+  font-size: 0.8rem;
+  nav {
+    ul {
+      @include flex(row, flex-end, center, 1rem);
+    }
+  }
+  > div {
+    @include flex(row, center, center, 1rem);
+    > *:nth-child(odd) {
+      flex: 1;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.cardGridWrapper {
+  @include flex(column, center, space-between, 1rem);
+  ul {
+    @include responsiveGrid(300px, 3rem, auto-fit);
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.locationCard {
+  @include flex(column, flex-end, center, 1rem);
+  background-position: center;
+  background-size: cover;
+  min-height: 200px;
+  box-shadow: $box-shadow;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  p {
+    color: $clr-gray-text;
+    font-size: 0.8rem;
+  }
+  hgroup {
+    width: 100%;
+    background-color: $clr-white;
+    padding: 1rem;
+    cursor: pointer;
+    h1 {
+      font-size: 1rem;
+    }
+    &:hover {
+      h1 {
+        color: $clr-red;
+      }
+      .foldOut {
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+}
+
+.foldOut {
+  transition: grid-template-rows 500ms;
+  display: grid;
+  grid-template-rows: 0fr;
+  > div {
+    overflow: hidden;
+  }
+}

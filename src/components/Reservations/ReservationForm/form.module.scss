@@ -1,0 +1,39 @@
+.reservationForm {
+  width: clamp(2ch, 500px, 95vw);
+  @include flex(column, center, flex-start, 1rem);
+  input,
+  textarea,
+  select {
+    border-radius: 4px;
+    outline: none !important;
+    border: none !important;
+    &:focus {
+      outline: none !important;
+      border: none !important;
+    }
+  }
+  label:has([type='radio']) {
+    width: fit-content;
+    padding: 0.2rem 0.4rem;
+    border-radius: $border-radius;
+    &:has(:checked) {
+      background-color: $clr-red-transparent;
+    }
+  }
+  input[type='checkbox'],
+  input[type='radio'] {
+    margin-right: 0.5rem;
+  }
+  fieldset {
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    @include flex(column, center, space-between, 1rem);
+  }
+  button[type='submit']:disabled {
+    background: $clr-gray-dark;
+    user-select: none;
+    cursor: not-allowed;
+  }
+}

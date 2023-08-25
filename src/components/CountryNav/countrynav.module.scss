@@ -1,0 +1,10 @@
+.navbar {
+  background: linear-gradient(to right, transparent, white, transparent);
+  ul {
+    padding: 2rem 0;
+    a {
+      color: $clr-black;
+    }
+    @include flex(row, center, space-between, 1rem);
+  }
+}

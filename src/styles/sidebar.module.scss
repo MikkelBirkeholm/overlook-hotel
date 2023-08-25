@@ -1,0 +1,24 @@
+.sidebarLayout {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  > div > h1 {
+    font-size: 3rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 1rem;
+      a {
+        text-decoration: none;
+        &:hover {
+          color: $clr-red;
+        }
+      }
+    }
+  }
+  .sidebar {
+    padding: 1rem;
+    border-left: 1px solid $clr-gray-dark;
+  }
+}

@@ -1,0 +1,34 @@
+.titleBanner {
+  position: relative;
+  display: grid;
+  place-content: center;
+  height: 100%;
+
+  > div {
+    @include mobile {
+      height: 50vh;
+    }
+    height: 80vh;
+    display: grid;
+    place-content: center left;
+    h1 {
+      font-size: calc(1rem + 1vw);
+      position: relative;
+      color: $clr-white;
+      background-color: $clr-black-transparent;
+      padding: 0.5rem 4rem 0.5rem 1rem;
+      border-bottom-right-radius: 10rem;
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: $clr-red-transparent;
+        min-height: 1rem;
+        width: 80%;
+        left: 0;
+        bottom: -1rem;
+        border-bottom-right-radius: calc(20% + 10rem);
+      }
+    }
+  }
+}

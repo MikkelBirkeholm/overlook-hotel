@@ -1,0 +1,131 @@
+:root {
+  width: 100%;
+  min-height: 100dvh;
+  background-color: $clr-gray;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  section {
+    padding: 2rem 0;
+    @include innerwidth;
+    @include flex(column, center flex-start, 1rem);
+  }
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+.innercontent {
+  @include innerwidth;
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    a {
+      color: $clr-white;
+      text-decoration: none;
+      &:hover {
+        color: $clr-red;
+      }
+    }
+  }
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='tel'],
+textarea,
+select {
+  padding: 0.4rem 1rem;
+  box-shadow: $box-shadow;
+  border: none;
+  border-radius: $border-radius;
+}
+.react-datepicker-wrapper {
+  width: 100% !important;
+  input {
+    width: 100% !important;
+  }
+}
+
+button:is(:not(.react-datepicker__navigation)) {
+  cursor: pointer;
+  background: linear-gradient(
+    to bottom,
+    $clr-red 35%,
+    darken($clr-red, 12%),
+    $clr-red
+  );
+  border: none;
+  padding: 0.4rem 1.5rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  color: $clr-white;
+  font-size: 0.9rem;
+}
+
+.active {
+  color: $clr-red;
+}
+.loading-wrapper {
+  min-height: 50vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebyside {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+  gap: 1rem;
+  label {
+    @include flex(column, center, flex-start, 0.5rem);
+  }
+}

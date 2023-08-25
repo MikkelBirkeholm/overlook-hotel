@@ -1,0 +1,48 @@
+.roomCard {
+  background-color: $clr-white;
+  position: relative;
+  .mainRoomContent {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+  }
+  padding: 2rem;
+  &:has(input:checked) {
+    .foldOut {
+      grid-template-rows: 1fr;
+    }
+    label {
+      svg {
+        rotate: 180deg;
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    background-color: $clr-white;
+    border: 1px solid $clr-gray-dark;
+    border-radius: 50%;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    input {
+      display: none;
+    }
+  }
+}
+
+.foldOut {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+  > div {
+    overflow: hidden;
+  }
+}
