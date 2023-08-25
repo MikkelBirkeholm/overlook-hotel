@@ -13,20 +13,20 @@ export const ReservationForm = ({ profile }) => {
   const searchParams = useSearchParams()
   const [data, setData] = useState({})
   const [formData, setFormData] = useState({
-    first_name: profile[0]?.first_name || '',
-    last_name: profile[0]?.last_name || '',
-    email: profile[0]?.email || '',
-    phone: profile[0]?.phone || '',
+    first_name: profile[0]?.first_name || null,
+    last_name: profile[0]?.last_name || null,
+    email: profile[0]?.email || null,
+    phone: profile[0]?.phone || null,
     terms: false,
-    from: '',
-    to: '',
-    comments: '',
-    hotel_country: '',
-    hotel_city: '',
-    hotel_room: '',
-    hotel: '',
-    type: '',
-    pris: '',
+    from: null,
+    to: null,
+    comments: null,
+    hotel_country: null,
+    hotel_city: null,
+    hotel_room: null,
+    hotel: null,
+    type: null,
+    pris: null,
   })
 
   useEffect(() => {
@@ -196,10 +196,21 @@ export const ReservationForm = ({ profile }) => {
         <button
           type="submit"
           disabled={!formData.terms}
+          onClick={(e) => {
+            e.preventDefault()
+            makeBooking(formData)
+          }}
         >
           Send reservation
         </button>
       </form>
     )
   }
+}
+
+async function makeBooking(data) {
+  await fetch('/api/booking/new-booking', {
+    method: 'put',
+    body: JSON.stringify({ data: data }),
+  })
 }
